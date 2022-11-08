@@ -1,0 +1,92 @@
+#add-note {
+  height: 2em;
+  width: 4em;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 24px;
+  /* color: rgba(0, 0, 0, 0.5); */
+  cursor: pointer;
+  transition: background 0.2s;
+  /* margin-bottom: 0.3em; */
+  margin-left: 0.5em;
+}
+
+#add-note:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#note-entry {
+  height: 3em;
+  box-sizing: border-box;
+  /* padding: 16px; */
+  width: 30em;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 9px rgb(24, 24, 24, 0.6);
+  resize: none;
+  font-family: Segoe Print;
+  /* font-size: 16px; */
+}
+.notes__small-updated {
+  color: #aaaaaa;
+  font-style: italic;
+  text-align: right;
+  font-size: 14px;
+}
+
+.note-display {
+  background: rgb(126, 3, 126);
+  font-size: 1.5em;
+  height: 180px;
+  width: 29em;
+  box-sizing: border-box;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 9px rgb(24, 24, 24, 0.6);
+  resize: none;
+  font-family: Segoe Print;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.del-btn {
+  width: 5.7em;
+  height: 2.2em;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+  .note-display {
+    width: 21em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .notes__small-updated {
+    /* width: 300px; */
+    margin-right: 1em;
+  }
+  .note-display {
+    height: 130px;
+    width: 90%;
+    padding: 10px;
+  }
+  .del-btn {
+    width: 5em;
+    height: 2.5em;
+    font-size: 16px;
+  }
+
+  #note-entry {
+    width: 70%;
+    font-size: 1em;
+  }
+  #add-note {
+    width: 4em;
+    font-size: 1em;
+  }
+}
