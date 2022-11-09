@@ -10,7 +10,7 @@
   cursor: pointer;
   transition: background 0.2s;
   /* margin-bottom: 0.3em; */
-  margin-left: 0.5em;
+  /* margin-left: 0.5em; */
 }
 
 #add-note:hover {
@@ -18,7 +18,7 @@
 }
 
 #note-entry {
-  height: 3em;
+  height: 8em;
   box-sizing: border-box;
   /* padding: 16px; */
   width: 30em;
@@ -50,16 +50,28 @@
   font-family: Segoe Print;
   font-size: 16px;
   color: rgb(255, 255, 255);
-  text-align: center;
+  /* text-align: center; */
 }
 
 .del-btn {
-  width: 5.7em;
-  height: 2.2em;
-  font-size: 18px;
+  height: 2em;
+  width: 4em;
+  border: none;
+  outline: none;
+  background: rgb(255, 0, 0);
+  border-radius: 10px;
+  font-size: 24px;
+  /* color: rgba(0, 0, 0, 0.5); */
+  cursor: pointer;
+  transition: background 0.2s;
+
 }
 
-@media only screen and (max-width: 768px) {
+.del-btn:hover {
+  background: rgba(245, 0, 0, 0.747);
+}
+
+@media only screen and (max-width: 899px) {
   .note-display {
     width: 21em;
   }
@@ -76,13 +88,12 @@
     padding: 10px;
   }
   .del-btn {
-    width: 5em;
-    height: 2.5em;
-    font-size: 16px;
+    width: 4em;
+    font-size: 1em;
   }
 
   #note-entry {
-    width: 70%;
+    width: 20em;
     font-size: 1em;
   }
   #add-note {

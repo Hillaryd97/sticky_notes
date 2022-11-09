@@ -1,14 +1,15 @@
 document.getElementById("myForm").addEventListener("submit", saveNotes);
 
+
 const myColor = () => {
   let n = (Math.random() * 0xfffff * 1000000).toString(16);
   return "#" + n.slice(0, 6);
 };
 
-var today = new Date();
-var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-var time = today.getHours() + ":" + today.getMinutes();
-var dateTime = date;
+// var today = new Date();
+// var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+// var time = today.getHours() + ":" + today.getMinutes();
+// var dateTime = date;
 
 
 // Save new notes to local storage
@@ -26,7 +27,7 @@ function saveNotes(e) {
     id: Math.floor(Math.random() * 100000),
     entry: noteEntry,
     noteColor: myColor(),
-    DateTime: dateTime,
+    // DateTime: dateTime,
   };
 
   if (localStorage.getItem("notes") === null) {
@@ -38,6 +39,8 @@ function saveNotes(e) {
     notes.push(note);
     localStorage.setItem("notes", JSON.stringify(notes));
   }
+  document.getElementById("myForm").reset();
+
   fetchNotes();
 }
 
@@ -66,20 +69,20 @@ function fetchNotes() {
     var entry = notes[i].entry;
     var id = notes[i].id;
     var noteColor = notes[i].noteColor;
-    var date = notes[i].DateTime
+    // var date = notes[i].DateTime
     
 
     noteOutput.innerHTML +=
       '<div class="col-md-6 mt-3 text-center">' +
       '<textarea disabled id="note-display"' +
-      'class="note-display" style="background-color:' +
+      'class="note-display p-3 mb-2 mt-2" style="background-color:' +
       noteColor +
       ' ;">' +
       entry + 
-      "</textarea> <br>" +'<div class="notes__small-updated">' +dateTime+ '</div>'+
+      "</textarea> <br>" +
       "<a onclick=\"deleteNote('" +
       id +
-      '\')" class="btn btn-danger del-btn  text-center" href="#">Delete</a></div>';
+      '\')" class="p-3 text-light pt-1 pb-2 text-center del-btn  text-center" href="#">Delete</a></div>';
   }
   // const myColor = () => {
   //   let n = (Math.random() * 0xfffff * 1000000).toString(16);
